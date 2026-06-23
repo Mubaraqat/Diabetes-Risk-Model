@@ -1,28 +1,28 @@
-# 🩺 Diabetes Risk Prediction Using Machine Learning
+# Diabetes Risk Prediction Using Machine Learning
 
-👨🏽‍💻 **Author**
+**Author**
 
 **Onifade Yemi Mubaraqat**  
 **Role:** Data Scientist
 
 ---
 
-# 📌 Project Overview
+# Project Overview
 
 This project develops a machine learning solution for predicting diabetes risk using patient health records. The objective is to assist healthcare providers with early identification of high-risk individuals, enabling timely intervention and preventive care.
 
 The project follows a complete end-to-end data science workflow:
 
-- 🧹 Data Cleaning & Preprocessing
-- 📊 Exploratory Data Analysis (EDA)
-- 🤖 Baseline Model Development
-- 🚀 Model Optimization
-- 📈 Model Evaluation
-- 🏥 Clinical Interpretation of Results
+- Data Cleaning & Preprocessing
+- Exploratory Data Analysis (EDA)
+- Baseline Model Development
+- Model Optimization
+- Model Evaluation
+- Clinical Interpretation of Results
 
 ---
 
-# 🎯 Business Problem
+# Business Problem
 
 Diabetes is a chronic disease that can lead to severe health complications if not detected early.
 
@@ -40,7 +40,7 @@ This project builds a predictive model that classifies patients as:
 
 ---
 
-# 📊 Dataset Information
+# Dataset Information
 
 ## Dataset Summary
 
@@ -77,14 +77,14 @@ This project builds a predictive model that classifies patients as:
 
 ---
 
-# 📈 Target Distribution
+# Target Distribution
 
 | Class | Count | Percentage |
 |:------|------:|-----------:|
 | No Diabetes (0) | 500 | 65.10% |
 | Diabetes (1) | 268 | 34.90% |
 
-### 🔍 Observation
+### Observation
 
 The dataset is moderately imbalanced.
 
@@ -92,7 +92,7 @@ This means machine learning models may naturally favor predicting the majority c
 
 ---
 
-# 🧹 Data Cleaning & Preprocessing
+# Data Cleaning & Preprocessing
 
 ## Missing Value Analysis
 
@@ -112,10 +112,10 @@ Median Imputation was applied to all columns containing missing values.
 
 ### Why Median?
 
-- ✅ Robust against outliers
-- ✅ Suitable for skewed medical variables
-- ✅ Preserves dataset size
-- ✅ Prevents loss of valuable patient records
+- Robust against outliers
+- Suitable for skewed medical variables
+- Preserves dataset size
+- Prevents loss of valuable patient records
 
 ### Result
 
@@ -123,9 +123,9 @@ Median Imputation was applied to all columns containing missing values.
 
 ---
 
-# 📊 Exploratory Data Analysis (EDA)
+# Exploratory Data Analysis (EDA)
 
-## 📌 Figure 1 — Diabetes Distribution
+## Figure 1 — Diabetes Distribution
 
 ### Findings
 
@@ -138,7 +138,7 @@ The dataset contains more healthy individuals than diabetic individuals. This im
 
 ---
 
-## 📌 Figure 2 — Glucose Distribution by Outcome
+## Figure 2 — Glucose Distribution by Outcome
 
 ### Findings
 
@@ -153,7 +153,7 @@ Glucose levels show strong separation between diabetic and non-diabetic patients
 
 ---
 
-## 📌 Figure 3 — Correlation Heatmap
+## Figure 3 — Correlation Heatmap
 
 ### Strongest Relationships with Diabetes
 
@@ -169,7 +169,7 @@ Higher glucose levels, elevated BMI, and increasing age are associated with grea
 
 ---
 
-# 🤖 Machine Learning Development
+# Machine Learning Development
 
 ## Data Splitting
 
@@ -186,7 +186,7 @@ Stratified sampling was applied to preserve the original class distribution in b
 
 ---
 
-# 📍 Baseline Model
+# Baseline Model
 
 ## Algorithm
 
@@ -221,7 +221,7 @@ Stratified sampling was applied to preserve the original class distribution in b
 - **False Negatives:** 17
 - **True Positives:** 37
 
-### 🏥 Medical Assessment
+### Medical Assessment
 
 The baseline model correctly identified **77.27%** of cases overall. However, it leaves a significant gap in catching all positive instances, missing **17 diabetic individuals** and incorrectly classifying them as healthy.
 
@@ -229,7 +229,7 @@ Since healthcare screening prioritizes minimizing missed diagnoses, hyperparamet
 
 ---
 
-# 🚀 Model Optimization
+# Model Optimization
 
 To thoroughly test the predictive boundaries of the model, the following improvements were implemented.
 
@@ -291,7 +291,7 @@ C = [0.01, 0.1, 1, 10, 100]
 
 ---
 
-# 🏆 Optimized Model Results
+# Optimized Model Results
 
 When evaluated on the untouched testing dataset (**n = 154**), the optimized model achieved the following performance.
 
@@ -304,7 +304,7 @@ When evaluated on the untouched testing dataset (**n = 154**), the optimized mod
 
 ---
 
-# 📊 Optimized Confusion Matrix
+# Optimized Confusion Matrix
 
 | | Predicted Healthy | Predicted Diabetic |
 |:-------------------|------------------:|-------------------:|
@@ -324,25 +324,25 @@ When evaluated on the untouched testing dataset (**n = 154**), the optimized mod
 
 ---
 
-# 🏥 Medical Context Interpretation
+# Medical Context Interpretation
 
 ### The Finalized Model Shows
 
-### ✅ Robust Accuracy
+### Robust Accuracy
 
 The model correctly classified **79.22%** of all patients, providing a reliable diagnostic triage baseline.
 
-### ✅ Balanced False Alarms
+### Balanced False Alarms
 
 A precision score of **71%** means that when the system flags a patient as high risk, approximately **7 out of every 10** predictions are correct, keeping false alarms manageable.
 
-### ✅ Stable Sensitivity
+### Stable Sensitivity
 
 The model captures **69%** of true diabetic cases, making it a useful screening tool before confirmatory laboratory testing.
 
 ---
 
-## 📌 Verdict
+## Verdict
 
 Hyperparameter optimization confirmed that the baseline Logistic Regression model had essentially reached the performance ceiling achievable for a linear classifier on this dataset.
 
@@ -350,7 +350,7 @@ The model is therefore suitable as a **clinical decision-support tool**, but **m
 
 ---
 
-# 🔍 Feature Importance
+# Feature Importance
 
 ## Top Predictors of Diabetes
 
@@ -366,7 +366,7 @@ Plasma glucose concentration, BMI, and age emerged as the strongest predictors o
 
 ---
 
-# 📌 Model Comparison
+# Model Comparison
 
 | Metric | Baseline | Optimized |
 |:--------|---------:|----------:|
@@ -377,7 +377,7 @@ Plasma glucose concentration, BMI, and age emerged as the strongest predictors o
 
 ---
 
-## ✅ Improvement Summary
+## Improvement Summary
 
 - ✔ Data standardization improved numerical stability.
 - ✔ Cross-validation confirmed optimal hyperparameters.
@@ -386,7 +386,7 @@ Plasma glucose concentration, BMI, and age emerged as the strongest predictors o
 
 ---
 
-# 🏁 Conclusion
+# Conclusion
 
 This project successfully developed an end-to-end machine learning pipeline capable of predicting diabetes risk using patient clinical indicators.
 
@@ -401,32 +401,32 @@ Although linear models appear to have reached their performance limit on this da
 
 ---
 
-# 🚀 Future Improvements
+# Future Improvements
 
-- 🌳 Random Forest
-- ⚡ XGBoost
-- 🎯 Probability Threshold Optimization
-- 🧬 Integration of HbA1c and Family History
-- 🔍 Explainable AI using SHAP
-- ⚖️ SMOTE for Class Imbalance
-- 🌐 Streamlit Deployment
-
----
-
-# 🛠️ Technologies Used
-
-- 🐍 Python
-- 📊 Pandas
-- 🔢 NumPy
-- 📉 Matplotlib
-- 🎨 Seaborn
-- 🤖 Scikit-Learn
-- 📓 Jupyter Notebook
-- 💻 VS Code
+- Random Forest
+- XGBoost
+- Probability Threshold Optimization
+- Integration of HbA1c and Family History
+- Explainable AI using SHAP
+- SMOTE for Class Imbalance
+- Streamlit Deployment
 
 ---
 
-# 📜 License
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
+- Jupyter Notebook
+- VS Code
+
+---
+
+# License
 
 This project is intended for **educational**, **research**, and **portfolio** purposes.
 
